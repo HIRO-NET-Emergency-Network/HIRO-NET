@@ -1,0 +1,1 @@
+include ':app', ':twitter4j-core-4.0.4', ':twitter4j-async-4.0.4'
