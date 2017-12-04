@@ -7,13 +7,13 @@ longestPath = 0;
 
 while ~theEnd
 
-    %ciclo su i percorsi possibili al contrario
+    % Find the best path through backwards induction
     for k = N_poi : -1 : 1
         Z = combinator(N_poi,k,'p');
         
         for z = 1 : length(Z)
             longestpath = Z(z,:);
-            reward_temp = sum(REWARDS(longestpath)); %sommo le reward del path
+            reward_temp = sum(REWARDS(longestpath)); % Get the overall reward
             length_temp = FT_BASE(longestpath(1));
             for i = 1 : k
                 if i == k
@@ -40,7 +40,7 @@ end
 
 % my_frame
 % LPD/LPI Scheme Transmitter
-% Copyright (c) 2016 Emrecan Demirors and Tommaso Melodia, WiNES Lab, Northeastern University,
+% Copyright (c) 2017 WiNES Lab, Northeastern University,
 %
 % Permission is hereby granted, free of charge, to any person obtaining a copy
 % of this software and associated documentation files (the "Software"), to deal
