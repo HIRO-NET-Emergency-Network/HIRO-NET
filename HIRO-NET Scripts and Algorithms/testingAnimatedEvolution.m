@@ -169,8 +169,8 @@ REWARDS42 = rand(N_poi42,1);
 REWARDS43 = rand(N_poi43,1);
 
 
-% FT_BASE é distanza fra PoI e Base 4 x 1
-% FT_POI é distanza fra poi e poi 4 x 4 con diagonale 0
+% FT_BASE is the distance between PoI and base 
+% FT_POI distance among each PoI
 % [FT_BASE11, FT_POI11] = gererateFlightTimes(x_BASES(1),y_BASES(1),x_fordrone11,y_fordrone11,speed_on_scaled_map,N_poi11);
 % [FT_BASE12, FT_POI12] = gererateFlightTimes(x_BASES(1),y_BASES(1),x_fordrone12,y_fordrone12,speed_on_scaled_map,N_poi12);
 % [FT_BASE21, FT_POI21] = gererateFlightTimes(x_BASES(2),y_BASES(2),x_fordrone21,y_fordrone21,speed_on_scaled_map,N_poi21);
@@ -416,14 +416,12 @@ for t = 1 + ceil(length(pts31)/3) : length(pts31)
     
     %     pause(0.00001);
     
-    % Sense meshes and Update info - In reality, this step is performed by using wifi
-    % antennas, and the number of meshes is not known in advance. This is
-    % just an example
+    % Sense meshes and Update info
     i = 1; % count the number of discovered networks
     for m = 1 : N_random_meshes
         % Remember that X_axis in the picture represents columns, while y
         % represents rows. Thus, in the following if we must use this
-        % order Y,X, and not the intuitive X,Y. IMPORTANT
+        % order Y,X, and not the intuitive X,Y.
         if random_meshes_pattern_BT(Y_axis(:,1)==y_drone,X_axis(1,:)==x_drone,m) == 1 && ~discoveredMesh31(m) % Sensing of meshes, it means that the drone is inside the sensing range of the drone
             discovered_meshes31(:,:,i) = random_meshes_pattern_BT(:,:,m); % Get info
             N_users_discovered_meshes31(i) = N_users_per_mesh(m);
@@ -495,14 +493,12 @@ for t = 1 : length(pts31)
     
     %     pause(0.00001);
     
-    % Sense meshes and Update info - In reality, this step is performed by using wifi
-    % antennas, and the number of meshes is not known in advance. This is
-    % just an example
+    % Sense meshes and Update info 
     i = 1; % count the number of discovered networks
     for m = 1 : N_random_meshes
         % Remember that X_axis in the picture represents columns, while y
         % represents rows. Thus, in the following if we must use this
-        % order Y,X, and not the intuitive X,Y. IMPORTANT
+        % order Y,X, and not the intuitive X,Y
         if random_meshes_pattern_BT(Y_axis(:,1)==y_drone,X_axis(1,:)==x_drone,m) == 1 && ~discoveredMesh31(m) % Sensing of meshes, it means that the drone is inside the sensing range of the drone
             discovered_meshes31(:,:,i) = random_meshes_pattern_BT(:,:,m); % Get info
             N_users_discovered_meshes31(i) = N_users_per_mesh(m);
@@ -534,3 +530,26 @@ for t = 1 : length(pts31)
 end
 
 % save('test_data.mat')
+
+
+% my_frame
+% LPD/LPI Scheme Transmitter
+% Copyright (c) 2017 WiNES Lab, Northeastern University,
+%
+% Permission is hereby granted, free of charge, to any person obtaining a copy
+% of this software and associated documentation files (the "Software"), to deal
+% in the Software without restriction, including without limitation the rights
+% to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+% copies of the Software, and to permit persons to whom the Software is
+% furnished to do so, subject to the following conditions:
+%
+% The above copyright notice and this permission notice shall be included in
+% all copies or substantial portions of the Software.
+%
+% THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+% IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+% FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+% AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+% LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+% OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+% THE SOFTWARE.
