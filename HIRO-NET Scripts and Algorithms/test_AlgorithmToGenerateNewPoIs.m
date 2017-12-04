@@ -121,7 +121,7 @@ old_poi_broad_temporary = old_poi_broad ;
 for i = 1 : length(pts)
     x_temp = pts(i,1);
     y_temp = pts(i,2);
-    distance_matrix = sqrt((X_axis - x_temp).^2 + (Y_axis - y_temp).^2); %distanza in metri
+    distance_matrix = sqrt((X_axis - x_temp).^2 + (Y_axis - y_temp).^2); % distance in meters
     idx = find(distance_matrix<=RADIUS_COVERAGE_SCALED);
     remove_function = exp(-((X_axis-x_temp).^2/(variance_gaussian_newpois))-((Y_axis-y_temp).^2/(variance_gaussian_newpois)));
     old_poi_broad_temporary(idx) = old_poi_broad_temporary(idx)-remove_function(idx);
@@ -156,7 +156,7 @@ distance_min(mod(distance_min,2)<1) = distance_min(mod(distance_min,2)<1)-1; % W
 
 % my_frame
 % LPD/LPI Scheme Transmitter
-% Copyright (c) 2016 Emrecan Demirors and Tommaso Melodia, WiNES Lab, Northeastern University,
+% Copyright (c) 2017 WiNES Lab, Northeastern University,
 %
 % Permission is hereby granted, free of charge, to any person obtaining a copy
 % of this software and associated documentation files (the "Software"), to deal
